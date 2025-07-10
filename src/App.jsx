@@ -1,9 +1,10 @@
 import "./App.css";
+import { NameList } from "./components/NameList/NameList";
 
 function App() {
 	return (
 		<>
-			<h1>Project</h1>
+			<NameList />
 		</>
 	);
 }

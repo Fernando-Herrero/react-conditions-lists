@@ -1,0 +1,20 @@
+/* ListaNombres.css */
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+li {
+	background-color: #f0f0f0;
+	margin-bottom: 8px;
+	padding: 10px 16px;
+	border-radius: 6px;
+	font-family: Arial, sans-serif;
+	transition: background-color 0.3s ease;
+}
+
+li:hover {
+	background-color: #d0eaff;
+	cursor: pointer;
+}
