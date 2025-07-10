@@ -1,0 +1,52 @@
+.task-list-container {
+	padding: 1rem;
+	max-width: 500px;
+	margin: auto;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1.2rem;
+	margin-bottom: 1rem;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background-color: #fff;
+	transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+	background-color: #f0f8ff;
+}
+
+.task-list-check {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.task-list-check input[type="checkbox"] {
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+.task-list-check span {
+	font-weight: bold;
+	color: #888;
+}
+
+.task-item h4 {
+	margin: 0;
+	font-size: 1.1rem;
+}
+
+/* ✅ Estilo para tareas completadas */
+.task-item h4.completed {
+	text-decoration: line-through;
+	color: green;
+}
