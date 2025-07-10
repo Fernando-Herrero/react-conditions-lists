@@ -1,0 +1,91 @@
+/* DynamicShoppingList.css */
+
+.container-dynamic-shopping-list {
+	max-width: 400px;
+	margin: 20px auto;
+	font-family: Arial, sans-serif;
+	background: #f9f9f9;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.dynamic-shopping-list-form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.dynamic-shopping-list-form label {
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+.dynamic-shopping-list-form input {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.dynamic-shopping-list-form button {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s ease;
+}
+
+.dynamic-shopping-list-form button:hover {
+	background-color: #45a049;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.added-products {
+	margin-top: 30px;
+}
+
+.added-products h1 {
+	margin-bottom: 12px;
+	font-size: 1.5rem;
+	border-bottom: 2px solid #4caf50;
+	padding-bottom: 4px;
+}
+
+.no-products-message {
+	font-style: italic;
+	color: #777;
+}
+
+.products-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.products-list li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	background: white;
+	padding: 12px;
+	border-radius: 6px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.products-list h3 {
+	font-weight: 700;
+    margin: 0;
+}
+
+.products-list span {
+	font-size: 0.9rem;
+	color: #555;
+}
