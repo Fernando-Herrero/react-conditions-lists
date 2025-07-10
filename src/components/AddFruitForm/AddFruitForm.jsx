@@ -31,16 +31,19 @@ export const AddFruitForm = () => {
 				<button type="submit">Add</button>
 			</form>
 
-			{fruits.length > 0 && (
-				<div className="fruits-list">
-					<h1>Fruits List</h1>
-					<ul>
-						{fruits.map((fruit, index) => (
-							<li key={`${fruit}-${index}`}>{fruit}</li>
-						))}
-					</ul>
-				</div>
-			)}
+			<div className="fruits-list">
+				<h1>Fruits List</h1>
+				{fruits.length === 0 && <span>There isn't any fruit yet</span>}
+				{fruits.length > 0 && (
+					<div>
+						<ul>
+							{fruits.map((fruit, index) => (
+								<li key={`${fruit}-${index}`}>{fruit}</li>
+							))}
+						</ul>
+					</div>
+				)}
+			</div>
 
 			{error && <span className="error">{error}</span>}
 		</div>
