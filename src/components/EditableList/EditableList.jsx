@@ -51,7 +51,7 @@ export const Editablelist = () => {
 								<button onClick={onSetName}>Set Name</button>
 							</div>
 						)}
-						<button onClick={() => onEditeNameList(index)}>Edit</button>
+						{editName !== index && <button onClick={() => onEditeNameList(index)}>Edit</button>}
 					</li>
 				))}
 			</ul>
