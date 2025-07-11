@@ -2,6 +2,7 @@ import "./App.css";
 import { AddFruitForm } from "./components/AddFruitForm/AddFruitForm";
 import { DynamicShoppingList } from "./components/DynamicShoppingList/DynamicShoppingList";
 import { Editablelist } from "./components/EditableList/EditableList";
+import { EmailCollector } from "./components/EmailCollector/EmailColector";
 import { MovieFavorites } from "./components/MovieFavorites/MovieFavorites";
 import { NameList } from "./components/NameList/NameList";
 import { OrderManager } from "./components/OrderManager/OrderManager";
@@ -27,6 +28,7 @@ function App() {
 			<UserFilterList />
 			<ScoreBoard />
 			<MovieFavorites />
+			<EmailCollector />
 		</>
 	);
 }
