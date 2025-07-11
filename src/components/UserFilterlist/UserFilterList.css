@@ -1,0 +1,56 @@
+.user-filter-list-container {
+	max-width: 400px;
+	margin: 20px auto;
+	font-family: Arial, sans-serif;
+	color: #333;
+}
+
+.user-list {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.user-list li {
+	padding: 10px 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.user-list li:last-child {
+	border-bottom: none;
+}
+
+.user-filter {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 10px;
+}
+
+.user-filter label {
+	font-weight: bold;
+}
+
+.user-filter input {
+	padding: 8px 12px;
+	font-size: 1rem;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	outline-offset: 2px;
+	transition: border-color 0.3s;
+}
+
+.user-filter input:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+.error {
+	color: #d9534f;
+	font-weight: 600;
+	margin-top: 8px;
+}

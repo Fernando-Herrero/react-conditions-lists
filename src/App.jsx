@@ -8,6 +8,7 @@ import { ProductList } from "./components/ProductList/ProductList";
 import { RemoveItemList } from "./components/RemoveItemList/RemoveItemList";
 import { TaskList } from "./components/TaskList/TaskList";
 import { ToggleItemList } from "./components/ToggleItemList/ToggleItemList";
+import { UserFilterList } from "./components/UserFilterlist/UserFilterList";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 			<ToggleItemList />
 			<Editablelist />
 			<OrderManager />
+			<UserFilterList />
 		</>
 	);
 }
