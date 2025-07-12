@@ -6,6 +6,7 @@ import { EmailCollector } from "./components/EmailCollector/EmailColector";
 import { MovieFavorites } from "./components/MovieFavorites/MovieFavorites";
 import { NameList } from "./components/NameList/NameList";
 import { OrderManager } from "./components/OrderManager/OrderManager";
+import { PizzaOrdersAdvanzed } from "./components/PizzaOrdersAdvanzed/PizzaOrdersAdvanzed";
 import { ProductList } from "./components/ProductList/ProductList";
 import { RemoveItemList } from "./components/RemoveItemList/RemoveItemList";
 import { RestaurantMenu } from "./components/RestaurantMenu/RestaurantMenu";
@@ -31,6 +32,7 @@ function App() {
 			<MovieFavorites />
 			<EmailCollector />
 			<RestaurantMenu />
+			<PizzaOrdersAdvanzed />
 		</>
 	);
 }
