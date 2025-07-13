@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./PizzaOrdersAdvanzed.css";
+import { PizzaList } from "./PizzaList/PizzaList";
+import { PizzaOrderForm } from "./PizzaOrderForm/PizzaOrderForm";
+import { PizzaOrdersList } from "./PizzaOrdersList/PizzaOrdersList";
 
 const pizzas = [
 	{ id: 1, name: "Margherita", price: 8.99 },
@@ -15,6 +18,7 @@ const pizzas = [
 ];
 
 export const PizzaOrdersAdvanzed = () => {
+	const [orders, setOrders] = useState([]);
 	const [order, setOrder] = useState({ id: "", name: "", price: "" });
 	const [inputValue, setInputValue] = useState("");
 	const [error, setError] = useState("");
@@ -35,50 +39,77 @@ export const PizzaOrdersAdvanzed = () => {
 			setError("No pizza found with that name");
 		}
 	};
-	const onSubmitForm = (event) => {};
+	const onSubmitForm = (event) => {
+		event.preventDefault();
+
+		if (!order.name) return setError("Pizza is required");
+
+		const newPendingOrder = {
+			id: order.id,
+			name: order.name,
+			price: order.price,
+			status: "Pending",
+		};
+		setOrders((prev) => [...prev, newPendingOrder]);
+		setInputValue("");
+		setOrder({ id: "", name: "", price: "" });
+	};
+
+	const onCompleteBtn = (id) => {
+		setOrders((prev) => prev.map((order) => (order.id === id ? { ...order, status: "Complete" } : order)));
+	};
+
+	const pendingOrders = orders.filter((order) => order.status === "Pending");
+	const completeOrders = orders.filter((order) => order.status === "Complete");
+
+	const totalAmount = () => {
+		return completeOrders.reduce((accumulator, order) => accumulator + order.price, 0);
+	};
+
+	const pendindOrderList = pendingOrders.map(({ id, name, price, status }) => (
+		<li key={id}>
+			<div>
+				<div className="pizza-orders-main">
+					<h4>{name}</h4>
+					<p>{price}€</p>
+				</div>
+				<span className="status-message">{status}...</span>
+			</div>
+			<button className="pending-pizza-orders-btn" onClick={() => onCompleteBtn(id)}>
+				Complete
+			</button>
+		</li>
+	));
+
+	const completeOrderList = completeOrders.map(({ id, name, price, status }) => (
+		<li key={id}>
+			<div className="pizza-orders-complete">
+				<div className="pizza-orders-main">
+					<h4>{name}</h4>
+					<p>{price}€</p>
+				</div>
+				<span className="status-message">{status}</span>
+			</div>
+		</li>
+	));
+
 	return (
 		<div className="pizza-orders-advanzed-container">
-			<h1>Pizzas:</h1>
-			<ul className="pizzas-orders-advanzed-list">
-				{pizzas.map(({ id, name, price }) => (
-					<li key={id}>
-						<p>
-							<strong>{name}</strong>
-						</p>
-						<span>
-							<strong>{price}</strong>
-						</span>
-					</li>
-				))}
-			</ul>
-			<form className="pizza-orders-advanzed-form" onSubmit={onSubmitForm}>
-				<h2>Order your Pizza:</h2>
-
-				{!order.name && <span className="no-order-message">{error ? error : "There isn't any order yet"}</span>}
-				{order.name && (
-					<div className="order-state">
-						<p>
-							<strong>{order.name}</strong>
-						</p>
-						<span>
-							<strong>{order.price}</strong>
-						</span>
-					</div>
-				)}
-
-				<label className="name">Your selection:</label>
-				<input
-					type="text"
-					id="name"
-					name="name"
-					autoComplete="off"
-					value={inputValue}
-					onChange={onInputOrder}
-					placeholder="Type a Pizza..."
-				/>
-
-				<button type="submit">Order</button>
-			</form>
+			<PizzaList pizzas={pizzas} />
+			<PizzaOrderForm
+				onSubmitForm={onSubmitForm}
+				onInputOrder={onInputOrder}
+				inputValue={inputValue}
+				order={order}
+				error={error}
+			/>
+			<PizzaOrdersList
+				pendingOrders={pendingOrders}
+				pendindOrderList={pendindOrderList}
+				completeOrders={completeOrders}
+				completeOrderList={completeOrderList}
+				totalAmount={totalAmount()}
+			/>
 		</div>
 	);
 };

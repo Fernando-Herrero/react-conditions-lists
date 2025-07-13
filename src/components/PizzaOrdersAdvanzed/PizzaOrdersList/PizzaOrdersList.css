@@ -1,0 +1,107 @@
+.pizza-orders-list-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	padding: 1.5rem;
+	background-color: #fffdf7;
+	border-radius: 12px;
+	border: 1px solid #ffeaa7;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	max-width: 600px;
+}
+
+.pizza-orders-list-container section {
+	background-color: #ffffff;
+	padding: 1rem 1.5rem;
+	border-radius: 10px;
+	border: 1px solid #f3c677;
+}
+
+.title-list {
+	color: #d35400;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	font-weight: 700;
+}
+
+.no-order-message {
+	text-align: center;
+	color: #c0392b;
+	background-color: #fdecea;
+	padding: 0.5rem 1rem;
+	border-radius: 6px;
+	font-size: 1rem;
+	margin: 0.5rem 0;
+}
+
+.pizza-orders-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.pizza-orders-list li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.2rem;
+	border: 1px solid #fad7a0;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.pizza-orders-main {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.pizza-orders-main p {
+	color: rgb(234, 15, 234);
+	font-weight: 500;
+}
+
+.pizza-orders-list li h4 {
+	margin: 0;
+	color: #6e2c00;
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.pizza-orders-list button {
+	background-color: #2ecc71;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 0.4rem 0.9rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.pizza-orders-list button:hover {
+	background-color: #27ae60;
+}
+
+.status-message {
+	font-style: italic;
+	font-weight: 100;
+}
+
+.pizza-orders-complete {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.complete-orders-total-amount {
+	display: inline-block;
+	padding-top: 10px;
+	color: rgb(16, 16, 161);
+	font-weight: 600;
+}

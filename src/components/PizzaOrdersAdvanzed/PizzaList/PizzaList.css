@@ -1,0 +1,45 @@
+/* PizzaList.css */
+
+.pizzas-list {
+	padding: 1.5rem;
+	background-color: #fff8f0;
+	border-radius: 12px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	margin-bottom: 2rem;
+}
+
+.pizzas-list h1 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+	color: #d35400;
+	text-align: center;
+}
+
+.pizzas-orders-advanzed-list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.pizzas-orders-advanzed-list li {
+	background-color: #fff;
+	padding: 1rem;
+	border-radius: 8px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pizzas-orders-advanzed-list p {
+	margin: 0;
+	font-weight: 600;
+	color: #2c3e50;
+}
+
+.pizzas-orders-advanzed-list span {
+	font-weight: 500;
+	color: #27ae60;
+}
